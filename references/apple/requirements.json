@@ -1,0 +1,24 @@
+{
+  "$comment": "Machine-readable App Store thresholds. Read by scripts/preflight_scan.py and updated by the weekly policy-sync workflow. Edit by hand only when a value is not covered by an extractor.",
+  "guidelines_last_updated": "2026-10-16",
+  "sdk_minimum": {
+    "xcode": 26,
+    "sdk": 26,
+    "effective": "2026-04-28",
+    "source": "https://developer.apple.com/news/upcoming-requirements/"
+  },
+  "deployment_target_minimum": {
+    "ios": 13,
+    "effective": "2026-09-09",
+    "source": "https://developer.apple.com/news/upcoming-requirements/"
+  },
+  "metadata_limits": {
+    "name": 30,
+    "subtitle": 30,
+    "keywords": 100,
+    "promotional_text": 170,
+    "description": 4000,
+    "whats_new": 4000
+  },
+  "last_synced": "2026-10-26"
+}

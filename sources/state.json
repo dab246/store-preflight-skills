@@ -1,0 +1,37 @@
+{
+  "apple-developer-news": {
+    "last_changed": "2026-10-26",
+    "sha256": "f11a7aa4789af0190cdfb7e72f78c69ee25daef75ee91825b86bdf1a5bb9595f",
+    "url": "https://developer.apple.com/news/rss/news.rss"
+  },
+  "apple-review-guidelines": {
+    "last_changed": "2026-10-26",
+    "sha256": "8611e3d8c122d6971e765feafe913011d5164c7e1aa5a2aeb5a09cff5ee00f6f",
+    "url": "https://developer.apple.com/app-store/review/guidelines/"
+  },
+  "apple-upcoming-requirements": {
+    "last_changed": "2026-10-26",
+    "sha256": "4f68e8e8c2da07e5876766aa3c9b399f3406db045bf2106efa60f458ccd249ac",
+    "url": "https://developer.apple.com/news/upcoming-requirements/"
+  },
+  "google-16kb-page-size": {
+    "last_changed": "2026-10-26",
+    "sha256": "9787fb2a2d2236dded1c46f0b321781ff7b6fc2ca58fdab77bd316cf10c92adf",
+    "url": "https://developer.android.com/guide/practices/page-sizes?hl=en"
+  },
+  "google-billing-deprecation": {
+    "last_changed": "2026-10-26",
+    "sha256": "723e03d6faee721d395c23479f4f2b37b76db05f6dda0c3a3fba098e0f1437ae",
+    "url": "https://developer.android.com/google/play/billing/deprecation-faq?hl=en"
+  },
+  "google-play-deadlines-timeline": {
+    "last_changed": "2026-10-26",
+    "sha256": "31285aec0b6904f82106ae04da3c23a6ced73bcf8a0dcaea23be6506d5428f2e",
+    "url": "https://developer.android.com/distribute/play-policies?hl=en"
+  },
+  "google-target-sdk": {
+    "last_changed": "2026-10-26",
+    "sha256": "9b474492c5377ad0eb2f0346c4fbe0a8c249a0c924f89f5e17314fa5da8bc06a",
+    "url": "https://developer.android.com/google/play/requirements/target-sdk?hl=en"
+  }
+}

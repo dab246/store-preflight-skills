@@ -1,0 +1,116 @@
+name: Weekly policy sync
+
+# Every Monday: fetch the official Apple and Google policy sources, refresh
+# snapshots, thresholds and generated indexes, and open (or update) a pull
+# request for maintainers to review.
+on:
+  schedule:
+    - cron: "17 2 * * 1"
+  workflow_dispatch:
+    inputs:
+      only:
+        description: "Comma-separated source ids (blank = all)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: policy-sync
+  cancel-in-progress: false
+
+env:
+  SYNC_BRANCH: chore/policy-sync
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: scripts/sync/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r scripts/sync/requirements.txt
+
+      - name: Fetch official sources
+        id: sync
+        env:
+          POLICY_SYNC_REDACT_TERMS: ${{ secrets.BLOCKED_TERMS }}
+          ONLY: ${{ inputs.only }}
+        run: |
+          ARGS=(--report "$RUNNER_TEMP/report.md")
+          if [ -n "$ONLY" ]; then ARGS+=(--only "$ONLY"); fi
+          if ! python scripts/sync/sync_sources.py "${ARGS[@]}"; then
+            echo "errors=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Check documentation links
+        id: links
+        run: |
+          if ! python scripts/check_links.py --report "$RUNNER_TEMP/report.md"; then
+            echo "broken=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Validate updated knowledge base
+        run: |
+          python scripts/validate_rules.py
+          python -m unittest discover -s tests
+
+      - name: Content guard
+        env:
+          CONTENT_GUARD_TERMS: ${{ secrets.BLOCKED_TERMS }}
+        run: |
+          git add -A
+          python scripts/content_guard.py
+
+      - name: Job summary
+        run: cat "$RUNNER_TEMP/report.md" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Open or update pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BASE: ${{ github.event.repository.default_branch }}
+        run: |
+          if git diff --cached --quiet; then
+            echo "No upstream changes."
+            exit 0
+          fi
+          TODAY=$(date -u +%F)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$SYNC_BRANCH"
+          git commit -m "chore(policy): weekly sync $TODAY"
+          git push --force origin "$SYNC_BRANCH"
+          gh label create policy-update --color 0E8A16 \
+            --description "Automated store policy changes" 2>/dev/null || true
+          if gh pr view "$SYNC_BRANCH" --json state -q .state 2>/dev/null | grep -q OPEN; then
+            gh pr edit "$SYNC_BRANCH" --title "chore(policy): weekly sync $TODAY" \
+              --body-file "$RUNNER_TEMP/report.md"
+          else
+            gh pr create --base "$BASE" --head "$SYNC_BRANCH" \
+              --title "chore(policy): weekly sync $TODAY" --body-file "$RUNNER_TEMP/report.md" \
+              --label policy-update
+          fi
+
+      - name: Flag sync problems
+        if: steps.sync.outputs.errors == 'true' || steps.links.outputs.broken == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TITLE="Policy sync needs attention"
+          gh label create policy-sync --color D93F0B \
+            --description "Policy sync could not read a source" 2>/dev/null || true
+          NUMBER=$(gh issue list --label policy-sync --state open --json number -q '.[0].number')
+          if [ -n "$NUMBER" ]; then
+            gh issue comment "$NUMBER" --body-file "$RUNNER_TEMP/report.md"
+          else
+            gh issue create --title "$TITLE" --label policy-sync --body-file "$RUNNER_TEMP/report.md"
+          fi

@@ -1,0 +1,14 @@
+// !$*UTF8*$!
+{
+	objects = {
+		XCBuildConfiguration_Release = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.dab246.demo;
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+	};
+}

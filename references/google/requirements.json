@@ -1,0 +1,29 @@
+{
+  "$comment": "Machine-readable Google Play thresholds. Read by scripts/preflight_scan.py and updated by the weekly policy-sync workflow. Edit by hand only when a value is not covered by an extractor.",
+  "target_sdk": {
+    "new_apps_and_updates": 36,
+    "existing_apps": 35,
+    "wear_os_and_automotive": 35,
+    "tv_and_xr": 34,
+    "effective": "2026-08-31",
+    "extension_until": "2026-11-01",
+    "source": "https://developer.android.com/google/play/requirements/target-sdk"
+  },
+  "play_billing_library": {
+    "min_major": 8,
+    "effective": "2026-08-31",
+    "extension_until": "2026-11-01",
+    "source": "https://developer.android.com/google/play/billing/deprecation-faq"
+  },
+  "page_size_16kb": {
+    "applies_to_target_sdk_at_least": 35,
+    "updates_blocked_from": "2027-02-01",
+    "source": "https://developer.android.com/guide/practices/page-sizes"
+  },
+  "listing_limits": {
+    "title": 30,
+    "short_description": 80,
+    "full_description": 4000
+  },
+  "last_synced": "2026-10-26"
+}

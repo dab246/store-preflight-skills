@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360" role="img" aria-labelledby="t d">
+  <title id="t">Store Preflight</title>
+  <desc id="d">Catch App Store and Google Play rejections before you submit</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1026"/>
+      <stop offset="0.55" stop-color="#1b1f4b"/>
+      <stop offset="1" stop-color="#3a1c5c"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5eead4"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.04"/>
+    </pattern>
+  </defs>
+  <rect width="1280" height="360" rx="24" fill="url(#bg)"/>
+  <rect width="1280" height="360" rx="24" fill="url(#grid)"/>
+  <!-- flight path -->
+  <path d="M1000 330 C 1080 310, 1110 210, 1150 96" fill="none" stroke="url(#accent)" stroke-width="3" stroke-dasharray="2 12" stroke-linecap="round" opacity="0.8"/>
+  <g transform="translate(1168 70) rotate(-40)">
+    <path d="M30 0 L-26 -22 L-14 0 L-26 22 Z" fill="#5eead4"/>
+    <path d="M30 0 L-14 0 L-26 22 Z" fill="#a78bfa"/>
+  </g>
+  <text x="80" y="138" font-family="-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="68" font-weight="800" fill="#ffffff">Store Preflight</text>
+  <text x="82" y="186" font-family="-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="26" fill="#c7d2fe">Catch App Store &amp; Google Play rejections before you submit</text>
+  <!-- chips -->
+  <g font-family="-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="20" font-weight="600">
+    <rect x="80" y="222" width="262" height="44" rx="22" fill="#ffffff" fill-opacity="0.08" stroke="#5eead4" stroke-opacity="0.6"/>
+    <circle cx="106" cy="244" r="10" fill="#5eead4"/><path d="M101 244 l4 4 l7 -8" stroke="#0b1026" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+    <text x="126" y="251" fill="#ffffff">iOS · iPadOS · macOS</text>
+    <rect x="358" y="222" width="318" height="44" rx="22" fill="#ffffff" fill-opacity="0.08" stroke="#a78bfa" stroke-opacity="0.6"/>
+    <circle cx="384" cy="244" r="10" fill="#a78bfa"/><path d="M379 244 l4 4 l7 -8" stroke="#0b1026" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+    <text x="404" y="251" fill="#ffffff">Android · Wear · TV · Auto</text>
+    <rect x="692" y="222" width="290" height="44" rx="22" fill="#ffffff" fill-opacity="0.08" stroke="#fbbf24" stroke-opacity="0.6"/>
+    <circle cx="718" cy="244" r="10" fill="#fbbf24"/><path d="M718 238 v7 l4 3" stroke="#0b1026" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+    <text x="738" y="251" fill="#ffffff">Policies synced weekly</text>
+  </g>
+  <text x="82" y="318" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#94a3b8">$ npx skills add dab246/store-preflight-skills</text>
+</svg>

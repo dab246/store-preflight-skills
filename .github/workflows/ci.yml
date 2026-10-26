@@ -1,0 +1,70 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate skill & run tests
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.9", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+          cache-dependency-path: scripts/sync/requirements.txt
+
+      - name: Install sync dependencies
+        run: pip install -r scripts/sync/requirements.txt
+
+      - name: Validate knowledge base
+        run: python scripts/validate_rules.py
+
+      - name: Unit tests
+        run: python -m unittest discover -s tests -v
+
+      - name: Scanner smoke test
+        run: |
+          python scripts/preflight_scan.py tests/fixtures/clean-android --strict
+          python scripts/preflight_scan.py tests/fixtures/android-app --format json > /dev/null
+          python scripts/preflight_scan.py tests/fixtures/ios-app --store all > "$RUNNER_TEMP/report.md"
+          cat "$RUNNER_TEMP/report.md" >> "$GITHUB_STEP_SUMMARY"
+
+  content-guard:
+    name: Content guard
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check files, commits and PR text for blocked terms
+        env:
+          CONTENT_GUARD_TERMS: ${{ secrets.BLOCKED_TERMS }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_BODY: ${{ github.event.pull_request.body }}
+          BRANCH: ${{ github.head_ref || github.ref_name }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: |
+          RANGE="HEAD"
+          if [ -n "$BASE_SHA" ] && [ "$BASE_SHA" != "0000000000000000000000000000000000000000" ] \
+             && git cat-file -e "$BASE_SHA" 2>/dev/null; then
+            RANGE="$BASE_SHA..HEAD"
+          fi
+          python scripts/content_guard.py --commits "$RANGE" \
+            --text-env PR_TITLE --text-env PR_BODY --text-env BRANCH

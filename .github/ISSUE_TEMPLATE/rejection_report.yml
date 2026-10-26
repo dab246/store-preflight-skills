@@ -1,0 +1,50 @@
+name: 🚫 Share a rejection
+description: Got rejected? Share it (anonymised) so we can turn it into a rule everyone benefits from.
+title: "[Rejection] <store> <guideline/policy>: <short summary>"
+labels: ["rejection-report", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping the community! **Remove app names, bundle IDs, emails and any private details** before posting.
+  - type: dropdown
+    id: store
+    attributes:
+      label: Store
+      options:
+        - 🍎 App Store (iOS / iPadOS / macOS)
+        - 🤖 Google Play (Android)
+    validations:
+      required: true
+  - type: input
+    id: guideline
+    attributes:
+      label: Guideline number / policy name
+      placeholder: "e.g. 5.1.1(v) or 'Photo and Video Permissions'"
+    validations:
+      required: true
+  - type: textarea
+    id: message
+    attributes:
+      label: Rejection message (anonymised)
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: cause
+    attributes:
+      label: What caused it and how you fixed it
+  - type: dropdown
+    id: caught
+    attributes:
+      label: Did store-preflight-skills catch it?
+      options:
+        - "No — there is no rule for this"
+        - "Partly — a rule exists but missed this case"
+        - "Yes — but I ignored the warning"
+        - "I didn't run the skill"
+  - type: input
+    id: framework
+    attributes:
+      label: Framework
+      placeholder: "native / Flutter / React Native / Expo / Capacitor / KMP"

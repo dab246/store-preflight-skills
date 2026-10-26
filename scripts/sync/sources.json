@@ -1,0 +1,81 @@
+{
+  "$comment": "Official policy sources watched by the weekly policy-sync workflow. Add a source here, pick an extractor from scripts/sync/sync_sources.py, and open a PR.",
+  "sources": [
+    {
+      "id": "apple-review-guidelines",
+      "store": "apple",
+      "title": "App Store Review Guidelines",
+      "url": "https://developer.apple.com/app-store/review/guidelines/",
+      "extractor": "apple_guidelines"
+    },
+    {
+      "id": "apple-upcoming-requirements",
+      "store": "apple",
+      "title": "Apple upcoming requirements",
+      "url": "https://developer.apple.com/news/upcoming-requirements/",
+      "extractor": "apple_upcoming"
+    },
+    {
+      "id": "apple-developer-news",
+      "store": "apple",
+      "title": "Apple Developer News (RSS)",
+      "url": "https://developer.apple.com/news/rss/news.rss",
+      "extractor": "rss"
+    },
+    {
+      "id": "google-play-deadlines-timeline",
+      "store": "google",
+      "title": "Upcoming Android and Google Play deadlines",
+      "url": "https://developer.android.com/distribute/play-policies?hl=en",
+      "extractor": "google_timeline"
+    },
+    {
+      "id": "google-target-sdk",
+      "store": "google",
+      "title": "Target API level requirements",
+      "url": "https://developer.android.com/google/play/requirements/target-sdk?hl=en",
+      "extractor": "google_target_sdk"
+    },
+    {
+      "id": "google-billing-deprecation",
+      "store": "google",
+      "title": "Play Billing Library version deprecation",
+      "url": "https://developer.android.com/google/play/billing/deprecation-faq?hl=en",
+      "extractor": "google_billing"
+    },
+    {
+      "id": "google-16kb-page-size",
+      "store": "google",
+      "title": "Support 16 KB page sizes",
+      "url": "https://developer.android.com/guide/practices/page-sizes?hl=en",
+      "extractor": "google_page_size"
+    },
+    {
+      "id": "google-policy-deadlines-table",
+      "store": "google",
+      "title": "Play Console Help: Policy Deadlines",
+      "url": "https://support.google.com/googleplay/android-developer/table/12921780?hl=en",
+      "extractor": "text",
+      "selector": "article, .article-container, main",
+      "optional": true
+    },
+    {
+      "id": "google-policy-announcements",
+      "store": "google",
+      "title": "Play Console Help: Policy announcements",
+      "url": "https://support.google.com/googleplay/android-developer/announcements/13412212?hl=en",
+      "extractor": "text",
+      "selector": "article, .article-container, main",
+      "optional": true
+    },
+    {
+      "id": "google-developer-program-policy",
+      "store": "google",
+      "title": "Google Play Developer Policy Center",
+      "url": "https://play.google/developer-content-policy/",
+      "extractor": "text",
+      "selector": "main, article",
+      "optional": true
+    }
+  ]
+}

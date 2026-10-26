@@ -1,0 +1,44 @@
+name: 📚 Rule request / policy change
+description: Propose a new rule, or report that Apple or Google changed a policy.
+title: "[Rule] <store>: <short title>"
+labels: ["rule", "triage"]
+body:
+  - type: dropdown
+    id: store
+    attributes:
+      label: Store
+      options:
+        - 🍎 App Store
+        - 🤖 Google Play
+        - Both
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Request type
+      options:
+        - New rule
+        - Update an existing rule
+        - New deadline / requirement
+        - New automated check in the scanner
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Official source URL
+      description: Only developer.apple.com, developer.android.com, support.google.com or other official Apple/Google pages are accepted.
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: What should be checked, and how can it be detected?
+    validations:
+      required: true
+  - type: input
+    id: effective
+    attributes:
+      label: Effective date (if any)
+      placeholder: YYYY-MM-DD

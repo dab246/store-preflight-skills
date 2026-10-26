@@ -1,0 +1,4 @@
+{
+  "ai_service_terms": ["DemoBot"],
+  "ai_endpoints": ["llm\\.internal\\.example"]
+}

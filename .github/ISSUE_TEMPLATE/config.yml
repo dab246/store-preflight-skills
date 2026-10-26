@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 🍎 App Store Review Guidelines (official)
+    url: https://developer.apple.com/app-store/review/guidelines/
+    about: Apple's authoritative text for every guideline number.
+  - name: 🤖 Google Play Policy Center (official)
+    url: https://play.google/developer-content-policy/
+    about: Google's authoritative text for every Play policy.
