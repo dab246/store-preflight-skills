@@ -1,7 +1,7 @@
 {
   "apple-developer-news": {
-    "last_changed": "2026-10-26",
-    "sha256": "f11a7aa4789af0190cdfb7e72f78c69ee25daef75ee91825b86bdf1a5bb9595f",
+    "last_changed": "2026-11-09",
+    "sha256": "9ee73ca28df43c9bbd514446158307c4c056904fdfdcc6d5ff4fecae3fd6737e",
     "url": "https://developer.apple.com/news/rss/news.rss"
   },
   "apple-review-guidelines": {
@@ -10,13 +10,13 @@
     "url": "https://developer.apple.com/app-store/review/guidelines/"
   },
   "apple-upcoming-requirements": {
-    "last_changed": "2026-10-26",
-    "sha256": "4f68e8e8c2da07e5876766aa3c9b399f3406db045bf2106efa60f458ccd249ac",
+    "last_changed": "2026-11-09",
+    "sha256": "95f9dfb4c52e36e64c7e0770ab3325fc6d0597aaf35bd6ad589c2169afcc53e9",
     "url": "https://developer.apple.com/news/upcoming-requirements/"
   },
   "google-16kb-page-size": {
-    "last_changed": "2026-10-26",
-    "sha256": "9787fb2a2d2236dded1c46f0b321781ff7b6fc2ca58fdab77bd316cf10c92adf",
+    "last_changed": "2026-11-09",
+    "sha256": "9730d3632f52ad7bfee4dbf6c49e6c3e03cae96b4e55135f0d66805b380854dc",
     "url": "https://developer.android.com/guide/practices/page-sizes?hl=en"
   },
   "google-billing-deprecation": {
@@ -24,10 +24,25 @@
     "sha256": "723e03d6faee721d395c23479f4f2b37b76db05f6dda0c3a3fba098e0f1437ae",
     "url": "https://developer.android.com/google/play/billing/deprecation-faq?hl=en"
   },
+  "google-developer-program-policy": {
+    "last_changed": "2026-11-09",
+    "sha256": "bdb36ad69076b40e9f7be0c0523a0d786b07ff072b68cca90a4ee3fa4f6e5fc7",
+    "url": "https://play.google/developer-content-policy/"
+  },
   "google-play-deadlines-timeline": {
-    "last_changed": "2026-10-26",
-    "sha256": "31285aec0b6904f82106ae04da3c23a6ced73bcf8a0dcaea23be6506d5428f2e",
+    "last_changed": "2026-11-09",
+    "sha256": "a388b2bdf4ddbaeb8a63815d6c8102ef3d317abae19ce6a4593c21aee5370402",
     "url": "https://developer.android.com/distribute/play-policies?hl=en"
+  },
+  "google-policy-announcements": {
+    "last_changed": "2026-11-09",
+    "sha256": "ac8fabebc1d680f3381c9c154b34833486f68e6bc1bc11f572e97d360892b4f2",
+    "url": "https://support.google.com/googleplay/android-developer/announcements/13412212?hl=en"
+  },
+  "google-policy-deadlines-table": {
+    "last_changed": "2026-11-09",
+    "sha256": "2209f9ddc5249db910d0bcea92e9724e2f3f4d3b4da1e112ae5d51ff05588c6c",
+    "url": "https://support.google.com/googleplay/android-developer/table/12921780?hl=en"
   },
   "google-target-sdk": {
     "last_changed": "2026-10-26",

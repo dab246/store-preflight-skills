@@ -1,3 +1,9 @@
+- 2026-11-04 — Now available: Retention messages for subscriptions <https://developer.apple.com/news/?id=fk9ps3gv>
+- 2026-11-03 — Siri AI is now open to all developers <https://developer.apple.com/news/?id=gdk2umrf>
+- 2026-11-03 — Get ready with the latest beta releases <https://developer.apple.com/news/?id=6gpufove>
+- 2026-11-02 — Upcoming: New age rating content descriptors in App Store Connect <https://developer.apple.com/news/?id=yxkh08us>
+- 2026-10-29 — Adjustments to the Taiwan storefront of the App Store on iOS and iPadOS <https://developer.apple.com/news/?id=w9mxlhek>
+- 2026-10-28 — Say hello to Touch on Mac <https://developer.apple.com/news/?id=i9boeiqc>
 - 2026-10-22 — Offer your subscriptions to businesses and schools <https://developer.apple.com/news/?id=yfo21auu>
 - 2026-10-16 — Updated App Review Guidelines are now available <https://developer.apple.com/news/?id=92th7e5i>
 - 2026-10-16 — Strengthening App Review Guidelines against nonconsensual intimate imagery and bait-and-switch apps <https://developer.apple.com/news/?id=vvzx6cul>
@@ -32,9 +38,3 @@
 - 2026-06-15 — New domain for Sign in with Apple and iCloud+ Hide My Email <https://developer.apple.com/news/?id=sus6t6ab>
 - 2026-06-11 — WWDC26 survey <https://developer.apple.com/news/?id=15wishue>
 - 2026-06-08 — Find out what's new for Apple developers <https://developer.apple.com/news/?id=8rgqj83s>
-- 2026-06-08 — Introducing Time Allowances <https://developer.apple.com/news/?id=0d2gpmml>
-- 2026-06-08 — Updated Apple Developer Program License Agreement and App Review Guidelines now available <https://developer.apple.com/news/?id=a233fmpw>
-- 2026-06-03 — Update for Apps Distributed in Texas <https://developer.apple.com/news/?id=sg176nne>
-- 2026-06-03 — Apple Developer Centers are expanding to Berlin <https://developer.apple.com/news/?id=f0jfy9py>
-- 2026-06-02 — Introducing the 2026 Apple Design Award winners <https://developer.apple.com/news/?id=vbvsocwh>
-- 2026-06-01 — All systems glow <https://developer.apple.com/news/?id=q7tgn1rr>
