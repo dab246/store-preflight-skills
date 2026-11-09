@@ -120,8 +120,3 @@ Learn about submitting apps
 Transition from subscription reports version 1.2 to 1.3
 Since March 1, 2023
 Subscription reports version 1.2 will no longer be available as of March 1, 2023. If you automatically download subscription reports using the App Store Connect API or Reporter, please update your query parameter to version 1.3 if you haven’t already.
-Transition from XML to App Store Connect API
-Since November 9, 2022
-The XML feed will no longer support in-app purchases, subscriptions, metadata, or app pricing as of November 9, 2022. You can manage this content via the App Store Connect REST API, which makes it easy to customize and automate your workflows.
-The XML feed will continue to support existing Game Center management functionality.
-Learn more about the API

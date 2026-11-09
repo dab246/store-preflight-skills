@@ -10,8 +10,8 @@ license: MIT
 metadata:
   author: dab246
   version: "1.0.0"
-  apple-guidelines-synced: "2026-10-26"
-  google-policies-synced: "2026-10-26"
+  apple-guidelines-synced: "2026-11-09"
+  google-policies-synced: "2026-11-09"
 ---
 
 # Store Preflight
